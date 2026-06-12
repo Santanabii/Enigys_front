@@ -13,16 +13,16 @@ export default function ContactPage() {
     consent: false
   });
 
-const [isSubmitting, setIsSubmitting] = useState(false);
-const [submitStatus, setSubmitStatus] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
  
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  setIsSubmitting(true);
-  setSubmitStatus(null);                        
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus(null);                        
 
-  try {
-    const response = await fetch(`${BACKEND_URL}/contact/`, {
+    try {
+      const response = await fetch(`${BACKEND_URL}/contact/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -32,43 +32,36 @@ const handleSubmit = async (e) => {
           company: formData.company,
           email: formData.email,
           phone: formData.phone,
-          inquiry_type: formData.inquiryType, // Map to backend field name
+          inquiry_type: formData.inquiryType,
           message: formData.message,
         }),
       });
-    
-    // Replace '/api/contact' with your actual server endpoint URL
-    // const response = await fetch(`${BACKEND_URL}/api/contact/`, {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-       
-    //   },
-    //   body: JSON.stringify(formData),
-    // });
 
-    if (response.ok) {
-      setSubmitStatus('success');
-      // Reset the form values on successful submission
-      setFormData({
-        name: '',
-        company: '',
-        email: '',
-        phone: '',
-        inquiryType: '',
-        message: '',
-        consent: false
-      });
-    } else {
+      if (response.ok) {
+        const data = await response.json();
+        setSubmitStatus('success');
+        // Reset the form values on successful submission
+        setFormData({
+          name: '',
+          company: '',
+          email: '',
+          phone: '',
+          inquiryType: '',
+          message: '',
+          consent: false
+        });
+        // Auto-clear success message after 5 seconds
+        setTimeout(() => setSubmitStatus(null), 5000);
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Network dispatch failure:', error);
       setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
     }
-  } catch (error) {
-    console.error('Network dispatch failure:', error);
-    setSubmitStatus('error');
-  } finally {
-    setIsSubmitting(false);
-  }
-};
+  };
 
   return (
     <div className="bg-[#F3F7FA] text-[#0A192F] antialiased min-h-screen flex flex-col font-sans">
@@ -179,6 +172,18 @@ const handleSubmit = async (e) => {
               </p>
             </div>
 
+            {/* Success/Error Messages */}
+            {submitStatus === 'success' && (
+              <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-xl">
+                <p className="text-sm font-semibold text-green-800">✓ Message sent successfully! We'll get back to you shortly.</p>
+              </div>
+            )}
+            {submitStatus === 'error' && (
+              <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-xl">
+                <p className="text-sm font-semibold text-red-800">✗ Failed to send message. Please try again or call us directly.</p>
+              </div>
+            )}
+
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="space-y-2">
@@ -238,11 +243,9 @@ const handleSubmit = async (e) => {
                     onChange={(e) => setFormData({...formData, inquiryType: e.target.value})}
                     className="w-full bg-[#F3F7FA] border border-slate-200 rounded-xl px-4 py-3.5 text-sm text-[#0A192F] focus:outline-none focus:border-[#2563EB] transition appearance-none cursor-pointer"
                   >
-                    <option value="" disabled>Select Department Destination</option>
-                    <option value="general">General Corporate Consultation</option>
+                    <option value="" disabled>Select Inquiry Type</option>
                     <option value="rfq">Request For Quote (RFQ) / Project Bids</option>
-                    <option value="technical">Technical Support & Asset Management</option>
-                    <option value="partnerships">Strategic Partnerships & Vendors</option>
+                    <option value="general">General Inquiry & Consultation</option>
                   </select>
                 </div>
               </div>
@@ -274,8 +277,12 @@ const handleSubmit = async (e) => {
               </div>
 
               <div className="pt-4">
-                <button type="submit" className="w-full inline-flex items-center justify-center px-8 py-4 text-sm font-semibold uppercase tracking-wider text-white bg-[#0A192F] rounded-xl hover:bg-[#2563EB] transition duration-300 shadow-md">
-                  Transmit Message
+                <button 
+                  type="submit" 
+                  disabled={isSubmitting}
+                  className="w-full inline-flex items-center justify-center px-8 py-4 text-sm font-semibold uppercase tracking-wider text-white bg-[#0A192F] rounded-xl hover:bg-[#2563EB] transition duration-300 shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isSubmitting ? 'Sending...' : 'Transmit Message'}
                 </button>
               </div>
             </form>
