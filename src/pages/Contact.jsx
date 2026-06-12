@@ -22,7 +22,7 @@ const handleSubmit = async (e) => {
   setSubmitStatus(null);                        
 
   try {
-    const response = await fetch(`${BACKEND_URL}/api/contact/`, {
+    const response = await fetch(`${BACKEND_URL}/contact/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
