@@ -32,13 +32,14 @@ export default function TechnicalHub() {
       {/* Hero Header - Enhanced */}
       <header className="relative bg-[#0A192F] text-white min-h-screen flex items-center pt-20 pb-20 overflow-hidden">
         {/* Background Image */}
-        <div 
-          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" 
-          style={{ 
-            backgroundImage: `url(${bgImage})`,
-            backgroundAttachment: 'fixed'
-          }}
-        ></div>
+         <div className="aspect-[4/3] overflow-hidden relative">
+                <img 
+                  src={bgImage} 
+                  alt="Industrial Hub" 
+                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A192F]/80 via-transparent to-transparent"></div>
+              </div>  
         {/* Overlay Gradients */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A192F]/80 via-[#0A192F]/70 to-[#0A192F]/90"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-[#0A192F]/60 to-transparent"></div>
