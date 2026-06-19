@@ -1,14 +1,23 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 // Leader Images
 import walterImage from '../assets/leaders/walter.png';
 import brianImage from '../assets/leaders/brian.png';
-import bgImage from '../assets/industrial-hub-bg.jpg'; 
-
-import { Link } from 'react-router-dom';
+import bgImage from '../assets/industrial-hub-bg.jpg';
 
 export default function TechnicalHub() {
+  const navigate = useNavigate();
   const [isVisible, setIsVisible] = useState({});
+
+  // Handler functions
+  const handleContactClick = () => {
+    navigate('/Contact');
+  };
+
+  const handleProjectsClick = () => {
+    navigate('/TrackRecord');
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -22,19 +31,6 @@ export default function TechnicalHub() {
       { threshold: 0.1 }
     );
 
-import { useNavigate } from 'react-router-dom';
-
-export default function TechnicalHub() {
-  const navigate = useNavigate();
-
-  const handleContactClick = () => {
-    navigate('/Contact');
-  };
-
-  const handleProjectsClick = () => {
-    navigate('/TrackRecord');
-  };
-
     const elements = document.querySelectorAll('.animate-on-scroll');
     elements.forEach((el) => observer.observe(el));
 
@@ -45,27 +41,63 @@ export default function TechnicalHub() {
     <div className="bg-[#F3F7FA] text-[#0A192F] antialiased min-h-screen font-sans">
       
       {/* Hero Header - Enhanced */}
-    <header className="relative bg-[#0A192F] text-white pt-52 pb-36 overflow-hidden">
+      <header className="relative bg-[#0A192F] text-white min-h-screen flex items-center pt-20 pb-20 overflow-hidden">
+        {/* Background Image */}
         <div 
-          className="absolute inset-0 z-0 opacity-30 mix-blend-luminosity bg-cover bg-center" 
-          style={{ backgroundImage: "url('/images/industrial-hub-bg.jpg')" }}
+          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" 
+          style={{ 
+            backgroundImage: `url(${bgImage})`,
+            backgroundAttachment: 'fixed'
+          }}
         ></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-[#0A192F]/90 to-[#0A192F]"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A192F]/80 via-[#0A192F]/70 to-[#0A192F]/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0A192F]/60 to-transparent"></div>
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 text-xs font-mono tracking-widest uppercase bg-white/10 border border-white/20 rounded-full mb-6">
-            EST. 2017 • NAIROBI, KENYA
+        <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
+          <div className="max-w-4xl">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 text-xs font-mono tracking-widest uppercase bg-[#10B981]/20 border border-[#10B981]/30 rounded-full mb-8 animate-pulse">
+              <span className="w-2 h-2 bg-[#10B981] rounded-full"></span>
+              EST. 2017 • NAIROBI, KENYA
+            </div>
+            
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[1.05] mb-6">
+              Engineering with{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#10B981] to-[#2563EB]">
+                Absolute Precision
+              </span>
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-gray-300 max-w-2xl leading-relaxed mb-10">
+              Delivering world-class energy solutions across East Africa with technical excellence and integrity.
+            </p>
+            
+            {/* CTA Buttons */}
+            <div className="flex flex-wrap gap-4">
+              <button 
+                onClick={handleContactClick}
+                className="px-8 py-4 bg-[#10B981] hover:bg-[#059669] text-white font-semibold rounded-full transition-all transform hover:scale-105 shadow-lg hover:shadow-[#10B981]/30"
+              >
+                Get Started
+              </button>
+              <button 
+                onClick={handleProjectsClick}
+                className="px-8 py-4 border-2 border-white/30 hover:border-white text-white font-semibold rounded-full transition-all hover:bg-white/10 backdrop-blur-sm"
+              >
+                Learn More →
+              </button>
+            </div>
           </div>
-          <h1 className="text-6xl md:text-7xl font-black tracking-tighter leading-[1.05] max-w-4xl">
-            Engineering with <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#10B981] to-[#2563EB]">Absolute Precision</span>
-          </h1>
-          <p className="mt-6 text-xl text-gray-300 max-w-2xl">
-            Delivering world-class energy solutions across East Africa with technical excellence and integrity.
-          </p>
+        </div>
+        
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
+          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-[#10B981] rounded-full mt-2 animate-pulse"></div>
+          </div>
         </div>
       </header>
 
-      {/* Mandate Section - Enhanced */}
+      {/* Mandate Section */}
       <section className="max-w-7xl mx-auto px-6 py-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           <div className="lg:col-span-5 space-y-8">
@@ -96,7 +128,6 @@ export default function TechnicalHub() {
               <p className="mt-6 text-[#475569] leading-relaxed">
                 To deliver sustainable, high-performance energy solutions that power East Africa's industrial and commercial growth.
               </p>
-              <div className="mt-6 text-[#10B981] opacity-0 group-hover:opacity-100 transition-all"></div>
             </div>
 
             <div className="bg-white p-10 rounded-3xl border border-slate-100 hover:border-[#2563EB] transition-all group hover:shadow-xl transform hover:-translate-y-1">
@@ -108,13 +139,12 @@ export default function TechnicalHub() {
               <p className="mt-6 text-[#475569] leading-relaxed">
                 EPC • Investment-Grade Energy Audits • Solar Systems • Power Distribution • Regulatory Compliance.
               </p>
-              <div className="mt-6 text-[#2563EB] opacity-0 group-hover:opacity-100 transition-all"></div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Leadership Section - Enhanced */}
+      {/* Leadership Section */}
       <section className="bg-white py-24 border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
@@ -155,7 +185,6 @@ export default function TechnicalHub() {
                   <span className="px-4 py-2 text-xs font-mono bg-white border border-slate-200 rounded-full">EPRA CLASS A</span>
                   <span className="px-4 py-2 text-xs font-mono bg-white border border-slate-200 rounded-full">AEE CEM</span>
                 </div>
-                
               </div>
             </div>
 
@@ -185,14 +214,13 @@ export default function TechnicalHub() {
                   <span className="px-4 py-2 text-xs font-mono bg-white border border-slate-200 rounded-full">AEE CMVP</span>
                   <span className="px-4 py-2 text-xs font-mono bg-white border border-slate-200 rounded-full">CEM®</span>
                 </div>
-                
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us - Enhanced */}
+      {/* Why Choose Us */}
       <section className="bg-[#F3F7FA] py-24 relative overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -350,7 +378,7 @@ export default function TechnicalHub() {
         </div>
       </section>
 
-      {/* New CTA Section */}
+      {/* CTA Section */}
       <section className="bg-[#0A192F] py-24 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#10B981] rounded-full blur-3xl"></div>
@@ -365,7 +393,7 @@ export default function TechnicalHub() {
           <p className="text-gray-300 text-lg mb-10 max-w-2xl mx-auto">
             Contact our team of experts today for a consultation on your energy needs.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">#
+          <div className="flex flex-wrap justify-center gap-4">
             <Link to="/Contact">
               <button className="px-8 py-4 bg-[#10B981] hover:bg-[#059669] text-white font-semibold rounded-full transition-all transform hover:scale-105 shadow-lg hover:shadow-[#10B981]/30">
                 Contact Us
