@@ -1,4 +1,6 @@
 import React from 'react';
+import walterImage from '../assets/leaders/walter.jpg';     // Adjust path if needed
+import brianImage from '../assets/leaders/brian.jpg';
 
 export default function TechnicalHub() {
   return (
@@ -72,6 +74,11 @@ export default function TechnicalHub() {
             {/* Walter */}
             <div className="group">
               <div className="aspect-[4/3] bg-slate-200 rounded-3xl overflow-hidden mb-8 relative">
+              <img 
+                  src={walterImage} 
+                  alt="Walter Kiplangat Korir - Managing Director & Lead Engineer"
+                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
                 <div className="absolute bottom-6 left-6 text-white opacity-0 group-hover:opacity-100 transition-all">
                   <p className="font-mono text-xs">LEAD ENGINEER</p>
