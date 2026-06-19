@@ -4,7 +4,6 @@ import { Link, useNavigate } from 'react-router-dom';
 // Leader Images
 import walterImage from '../assets/leaders/walter.png';
 import brianImage from '../assets/leaders/brian.png';
-import bgImage from '../assets/industrial-hub-bg.jpg';
 
 export default function TechnicalHub() {
   const navigate = useNavigate();
@@ -42,16 +41,8 @@ export default function TechnicalHub() {
       
       {/* Hero Header - Enhanced */}
       <header className="relative bg-[#0A192F] text-white min-h-screen flex items-center pt-20 pb-20 overflow-hidden">
-        {/* Background Image */}
-        <div 
-          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" 
-          style={{ 
-            backgroundImage: `url(${bgImage})`,
-            backgroundAttachment: 'fixed'
-          }}
-        ></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0A192F]/80 via-[#0A192F]/70 to-[#0A192F]/90"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0A192F]/60 to-transparent"></div>
+        {/* Removed background image - using solid color only */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A192F] to-[#0A192F]/95"></div>
 
         <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
           <div className="max-w-4xl">
