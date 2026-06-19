@@ -91,7 +91,11 @@ export default function TechnicalHub() {
             {/* Brian */}
             <div className="group">
               <div className="aspect-[4/3] bg-slate-200 rounded-3xl overflow-hidden mb-8 relative">
-              <img src="/assets/cb.png" alt="Brian Chebor Kiprop - Technical Director" />
+              <img 
+                  src={brianImage} 
+                  alt="Brian Chebor Kiprop - Technical Director"
+                  className="w-full h-full object-cover"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
                 <div className="absolute bottom-6 left-6 text-white opacity-0 group-hover:opacity-100 transition-all">
                   <p className="font-mono text-xs">OPERATIONS LEAD</p>
