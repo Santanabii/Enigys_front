@@ -5,6 +5,8 @@ import walterImage from '../assets/leaders/walter.png';
 import brianImage from '../assets/leaders/brian.png';
 import bgImage from '../assets/industrial-hub-bg.jpg'; 
 
+import { Link } from 'react-router-dom';
+
 export default function TechnicalHub() {
   const [isVisible, setIsVisible] = useState({});
 
@@ -19,6 +21,19 @@ export default function TechnicalHub() {
       },
       { threshold: 0.1 }
     );
+
+import { useNavigate } from 'react-router-dom';
+
+export default function TechnicalHub() {
+  const navigate = useNavigate();
+
+  const handleContactClick = () => {
+    navigate('/Contact');
+  };
+
+  const handleProjectsClick = () => {
+    navigate('/TrackRecord');
+  };
 
     const elements = document.querySelectorAll('.animate-on-scroll');
     elements.forEach((el) => observer.observe(el));
@@ -350,13 +365,17 @@ export default function TechnicalHub() {
           <p className="text-gray-300 text-lg mb-10 max-w-2xl mx-auto">
             Contact our team of experts today for a consultation on your energy needs.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <button className="px-8 py-4 bg-[#10B981] hover:bg-[#059669] text-white font-semibold rounded-full transition-all transform hover:scale-105 shadow-lg hover:shadow-[#10B981]/30">
-              Contact Us
-            </button>
-            <button className="px-8 py-4 border-2 border-white/30 hover:border-white text-white font-semibold rounded-full transition-all hover:bg-white/10">
-              View Our Projects
-            </button>
+          <div className="flex flex-wrap justify-center gap-4">#
+            <Link to="/Contact">
+              <button className="px-8 py-4 bg-[#10B981] hover:bg-[#059669] text-white font-semibold rounded-full transition-all transform hover:scale-105 shadow-lg hover:shadow-[#10B981]/30">
+                Contact Us
+              </button>
+            </Link>
+            <Link to="/TrackRecord">
+              <button className="px-8 py-4 border-2 border-white/30 hover:border-white text-white font-semibold rounded-full transition-all hover:bg-white/10">
+                View Our Projects
+              </button>
+            </Link>
           </div>
         </div>
       </section>
