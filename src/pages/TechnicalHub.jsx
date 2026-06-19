@@ -8,34 +8,38 @@ export default function TechnicalHub() {
   return (
     <div className="bg-[#F3F7FA] text-[#0A192F] antialiased min-h-screen font-sans">
       
-      {/* Hero - Enhanced with Stronger CTA */}
-      <header className="relative bg-[#0A192F] text-white pt-52 pb-40 overflow-hidden">
+      {/* Hero Section with Background Image & Strong CTA */}
+      <header className="relative bg-[#0A192F] text-white pt-52 pb-40 overflow-hidden min-h-[85vh] flex items-center">
+        {/* Background Image */}
         <div 
-          className="absolute inset-0 z-0 opacity-40 mix-blend-luminosity bg-cover bg-center" 
-          style={{ backgroundImage: "url('/images/industrial-hub-bg.jpg')" }}
+          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+          style={{ 
+            backgroundImage: "url('/images/industrial-hub-bg.jpg')",
+            opacity: 0.45 
+          }}
         ></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-[#0A192F]/95 to-[#0A192F]"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-[#0A192F]/90 to-[#0A192F] z-0"></div>
 
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
           <div className="inline-flex items-center gap-2 px-5 py-2 text-xs font-mono tracking-widest uppercase bg-white/10 border border-white/20 rounded-full mb-6">
             EST. 2017 • NAIROBI, KENYA
           </div>
+          
           <h1 className="text-6xl md:text-7xl font-black tracking-tighter leading-[1.05] max-w-5xl mx-auto">
             Engineering with <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#10B981] to-[#2563EB]">Absolute Precision</span>
           </h1>
+          
           <p className="mt-6 text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
             Trusted technical partner delivering energy efficiency, renewable solutions, and world-class engineering across East Africa.
           </p>
 
-          {/* Hero CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
-            <a href="/contact" 
-               className="px-10 py-4 bg-[#10B981] hover:bg-[#34D399] text-white font-semibold rounded-2xl transition-all text-lg inline-flex items-center justify-center gap-3">
-              Start a Project →
-            </a>
-            <a href="/contact" 
-               className="px-10 py-4 border-2 border-white/70 hover:border-white font-semibold rounded-2xl text-lg transition-all">
-              Schedule Energy Audit
+          {/* Single Strong CTA */}
+          <div className="mt-12">
+            <a 
+              href="/contact" 
+              className="inline-flex items-center gap-3 px-12 py-5 bg-[#10B981] hover:bg-[#34D399] text-white font-semibold rounded-2xl text-lg transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              Get In Touch With Our Team →
             </a>
           </div>
         </div>
@@ -130,7 +134,7 @@ export default function TechnicalHub() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
+      {/* Why Choose Us - Green Icons */}
       <section className="bg-[#F3F7FA] py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
@@ -140,13 +144,13 @@ export default function TechnicalHub() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { icon: "🔒", title: "Licensed Expertise", desc: "EPRA Class A Auditors, Certified Energy Managers (CEM), and T3 Solar Specialists." },
-              { icon: "🏗️", title: "End-to-End EPC", desc: "Full Procurement, Engineering, Construction, Commissioning and Maintenance." },
-              { icon: "📊", title: "Proven Track Record", desc: "Successful delivery of 300+ energy audits and major projects across East Africa." },
+              { icon: "🏆", title: "Licensed Expertise", desc: "EPRA Class A Auditors, Certified Energy Managers (CEM), and T3 Solar Specialists." },
+              { icon: "🔧", title: "End-to-End EPC", desc: "Full Procurement, Engineering, Construction, Commissioning and Maintenance." },
+              { icon: "📈", title: "Proven Track Record", desc: "Successful delivery of 300+ energy audits and major projects across East Africa." },
               { icon: "🌍", title: "Regional Expertise", desc: "Deep understanding of East African regulations, markets, and operational challenges." }
             ].map((item, i) => (
               <div key={i} className="group bg-white p-8 rounded-3xl hover:shadow-xl border border-slate-100 hover:border-[#10B981] transition-all duration-300">
-                <div className="text-5xl mb-6 transition-transform group-hover:scale-110">{item.icon}</div>
+                <div className="text-[#10B981] text-5xl mb-6 transition-transform group-hover:scale-110">{item.icon}</div>
                 <h3 className="text-2xl font-bold mb-3">{item.title}</h3>
                 <p className="text-[#475569] leading-relaxed">{item.desc}</p>
               </div>
@@ -155,7 +159,7 @@ export default function TechnicalHub() {
         </div>
       </section>
 
-      {/* Project Experience & Impact */}
+      {/* Project Experience */}
       <section className="bg-white py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
@@ -182,14 +186,6 @@ export default function TechnicalHub() {
                 <li>• MV/LV Electrical Infrastructure</li>
               </ul>
             </div>
-          </div>
-
-          {/* Final CTA */}
-          <div className="text-center mt-16">
-            <a href="/contact" 
-               className="inline-block px-12 py-5 bg-[#0A192F] hover:bg-[#2563EB] text-white font-semibold rounded-2xl text-lg transition-all">
-              Discuss Your Project With Our Team →
-            </a>
           </div>
         </div>
       </section>
