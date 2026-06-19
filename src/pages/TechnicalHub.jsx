@@ -1,8 +1,8 @@
 import React from 'react';
 
 // Leader Images
-import walterImage from '../assets/leaders/walter.jpg';
-import brianImage from '../assets/leaders/brian.jpg';
+import walterImage from '../assets/leaders/walter.png';
+import brianImage from '../assets/leaders/brian.png';
 
 export default function TechnicalHub() {
   return (
