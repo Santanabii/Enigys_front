@@ -2,160 +2,126 @@ import React from 'react';
 
 export default function TechnicalHub() {
   return (
-    <div className="bg-[#F3F7FA] text-[#0A192F] antialiased min-h-screen flex flex-col font-sans">
+    <div className="bg-[#F3F7FA] text-[#0A192F] antialiased min-h-screen font-sans">
       
-    
-      <header className="relative bg-[#0A192F] text-white pt-52 pb-32 overflow-hidden border-b border-white/10">
-        <div className="absolute inset-0 z-0 opacity-25 mix-blend-luminosity bg-cover bg-center" style={{ backgroundImage: "url('/images/industrial-hub-bg.jpg')" }}></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0A192F] via-[#0A192F]/85 to-[#0A192F] z-0"></div>
-        
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-end relative z-10">
-          <div className="lg:col-span-8 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 text-xs font-mono tracking-widest uppercase text-[#10B981] bg-white/5 border border-white/10 rounded-full">
-              Operational Framework
-            </div>
-            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter leading-[1.05] max-w-4xl">
-              Engineering <br />with Absolute <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2563EB] to-[#10B981]">Precision</span>
-            </h1>
+      {/* Hero Header - More Dramatic */}
+      <header className="relative bg-[#0A192F] text-white pt-52 pb-36 overflow-hidden">
+        <div className="absolute inset-0 opacity-30 mix-blend-luminosity bg-cover bg-center" 
+             style={{ backgroundImage: "url('/images/industrial-hub-bg.jpg')" }}></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-[#0A192F]/90 to-[#0A192F]"></div>
+
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 text-xs font-mono tracking-widest uppercase bg-white/10 border border-white/20 rounded-full mb-6">
+            OUR FOUNDATION
           </div>
-          <div className="lg:col-span-4 lg:text-right">
-            <p className="text-gray-400 text-base md:text-lg font-light max-w-sm lg:ml-auto leading-relaxed border-l-2 lg:border-l-0 lg:border-r-2 border-[#10B981] pl-4 lg:pl-0 lg:pr-4">
-              A comprehensive overview of our corporate core mandate, executive governance, and field instrumentation fleet.
-            </p>
-          </div>
+          <h1 className="text-6xl md:text-7xl font-black tracking-tighter leading-[1.05] max-w-4xl">
+            Engineering with <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#10B981] to-[#2563EB]">Human Precision</span>
+          </h1>
+          <p className="mt-6 text-xl text-gray-300 max-w-2xl">
+            Meet the leadership driving technical excellence across East Africa.
+          </p>
         </div>
       </header>
 
-      {/* VoltEra Grid Structural Blueprint Section */}
-      <section className="max-w-7xl mx-auto px-6 py-24 w-full relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 border-t border-slate-300 pt-12">
-          
-          {/* Column 1: Core Meta Info */}
-          <div className="lg:col-span-4 space-y-8">
-            <div className="space-y-3">
-              <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#2563EB] block">[ Corporate Identity ]</span>
-              <h2 className="text-3xl font-extrabold text-[#0A192F] tracking-tight leading-none">The Mandate</h2>
+      {/* Mandate Section */}
+      <section className="max-w-7xl mx-auto px-6 py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+          <div className="lg:col-span-5 space-y-8">
+            <div>
+              <span className="font-mono text-xs tracking-[2px] text-[#2563EB] uppercase font-semibold">EST. 2017</span>
+              <h2 className="text-5xl font-bold tracking-tighter mt-3">Our Core Mandate</h2>
             </div>
-            <div className="p-6 bg-white rounded-2xl border border-slate-200/60 shadow-sm">
-              <p className="text-5xl font-black text-[#2563EB] tracking-tighter">2017</p>
-              <p className="text-[11px] uppercase tracking-widest font-mono font-bold text-[#475569] mt-1">Incorporation Benchmarks</p>
-              <p className="text-sm text-[#475569] font-light mt-4 leading-relaxed">
-                Established to deliver premium engineering integration, converting legacy operations into fully certified, modern energy systems.
+            <div className="bg-white p-8 rounded-3xl border border-slate-100">
+              <p className="text-6xl font-black text-[#2563EB]">2017</p>
+              <p className="text-sm uppercase tracking-widest text-[#475569] mt-2">Incorporation Year</p>
+              <p className="mt-8 text-[#475569] leading-relaxed">
+                Transforming legacy energy systems into modern, efficient, and compliant power infrastructures across East Africa.
               </p>
             </div>
           </div>
-          
-          {/* Column 2 & 3: Structural Content Grid Split */}
-          <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white p-8 rounded-2xl border border-slate-200/60 shadow-sm flex flex-col justify-between">
-              <div className="space-y-4">
-                <span className="text-xs font-mono text-[#10B981] font-bold">// 01 . PHILOSOPHY</span>
-                <h3 className="text-2xl font-extrabold text-[#0A192F] tracking-tight">Our Mission Statement</h3>
-                <p className="text-sm text-[#475569] font-light leading-relaxed">
-                  To transform traditional energy and electrical architectures across East Africa into streamlined, highly efficient, and regulatory-compliant power networks. We build systems optimized for absolute runtime fidelity.
-                </p>
-              </div>
+
+          <div className="lg:col-span-7 grid md:grid-cols-2 gap-8">
+            <div className="bg-white p-10 rounded-3xl border border-slate-100 hover:border-[#10B981] transition-all group">
+              <div className="text-[#10B981] font-mono text-sm mb-4">// PHILOSOPHY</div>
+              <h3 className="text-3xl font-bold tracking-tight">Our Mission</h3>
+              <p className="mt-6 text-[#475569] leading-relaxed">
+                To deliver world-class engineering solutions that power sustainable growth in East Africa.
+              </p>
             </div>
 
-            <div className="bg-white p-8 rounded-2xl border border-slate-200/60 shadow-sm flex flex-col justify-between">
-              <div className="space-y-4">
-                <span className="text-xs font-mono text-[#2563EB] font-bold">// 02 . ENGAGEMENT</span>
-                <h3 className="text-2xl font-extrabold text-[#0A192F] tracking-tight">Technical Execution</h3>
-                <p className="text-sm text-[#475569] font-light leading-relaxed">
-                  We specialize in multi-scale Procurement, Engineering Construction (EPC), Investment-Grade energy auditing, commercial solar utility transitions, decentralized micro-grid design matrices, and medical asset life-cycle execution modules.
-                </p>
-              </div>
+            <div className="bg-white p-10 rounded-3xl border border-slate-100 hover:border-[#2563EB] transition-all group">
+              <div className="text-[#2563EB] font-mono text-sm mb-4">// EXECUTION</div>
+              <h3 className="text-3xl font-bold tracking-tight">What We Do</h3>
+              <p className="mt-6 text-[#475569] leading-relaxed">
+                EPC • Energy Audits • Solar Systems • Power Infrastructure • Regulatory Compliance.
+              </p>
             </div>
           </div>
-
         </div>
       </section>
 
-      {/* Engineering Calculation Integration Framework Section */}
-      <section className="bg-white py-24 border-t border-slate-200">
-        <div className="max-w-7xl mx-auto px-6 w-full space-y-12">
-          <div className="border-l-4 border-[#10B981] pl-6 space-y-2">
-            <span className="text-xs font-mono tracking-widest text-[#475569] uppercase block">Diagnostics Suite</span>
-            <h2 className="text-4xl font-extrabold text-[#0A192F] tracking-tight">Industrial Calculation Verification</h2>
+      {/* Leadership - Human-Centered Team Section (Dribbble Inspired) */}
+      <section className="bg-white py-24 border-t border-slate-100">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="uppercase font-mono tracking-widest text-sm text-[#10B981]">Leadership</span>
+            <h2 className="text-5xl font-bold tracking-tighter mt-3">Meet Our Technical Minds</h2>
           </div>
-          <div className="bg-[#F3F7FA] p-8 rounded-2xl border border-slate-200/80 max-w-4xl space-y-6">
-            <p className="text-sm font-light text-[#475569] leading-relaxed">
-              During standard Class A investment-grade energy audits, total active execution thresholds are verified using continuous multi-variable power calculations across low, medium, and high voltage distribution loops:
+
+          <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+            {/* Walter */}
+            <div className="group">
+              <div className="aspect-[4/3] bg-slate-200 rounded-3xl overflow-hidden mb-8 relative">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                <div className="absolute bottom-6 left-6 text-white opacity-0 group-hover:opacity-100 transition-all">
+                  <p className="font-mono text-xs">LEAD ENGINEER</p>
+                </div>
+              </div>
+              <h3 className="text-3xl font-bold">Walter Kiplangat Korir</h3>
+              <p className="text-[#2563EB] font-medium mt-1">Managing Director &amp; Lead Engineer</p>
+              <p className="mt-6 text-[#475569] leading-relaxed">
+                12+ years in energy systems engineering. EPRA Class A Auditor and T3 Solar Specialist. Passionate about building resilient power infrastructure.
+              </p>
+              <div className="flex gap-3 mt-8">
+                <span className="px-4 py-2 text-xs font-mono bg-[#F3F7FA] rounded-full">EPRA CLASS A</span>
+                <span className="px-4 py-2 text-xs font-mono bg-[#F3F7FA] rounded-full">AEE CEM</span>
+              </div>
+            </div>
+
+            {/* Brian */}
+            <div className="group">
+              <div className="aspect-[4/3] bg-slate-200 rounded-3xl overflow-hidden mb-8 relative">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+                <div className="absolute bottom-6 left-6 text-white opacity-0 group-hover:opacity-100 transition-all">
+                  <p className="font-mono text-xs">OPERATIONS LEAD</p>
+                </div>
+              </div>
+              <h3 className="text-3xl font-bold">Brian Chebor Kiprop</h3>
+              <p className="text-[#10B981] font-medium mt-1">Technical Director</p>
+              <p className="mt-6 text-[#475569] leading-relaxed">
+                13+ years across industrial power, mechanical systems, and international projects. Key contributor to major regional energy initiatives.
+              </p>
+              <div className="flex gap-3 mt-8">
+                <span className="px-4 py-2 text-xs font-mono bg-[#F3F7FA] rounded-full">AEE CMVP</span>
+                <span className="px-4 py-2 text-xs font-mono bg-[#F3F7FA] rounded-full">KERB REGISTERED</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Power Formula Section - Refined */}
+      <section className="bg-[#0A192F] text-white py-24">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <h2 className="text-4xl font-bold tracking-tight mb-8">Engineering with Precision</h2>
+          <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-12 rounded-3xl">
+            <div className="text-4xl md:text-5xl font-mono font-light tracking-widest mb-8">P = √3 × V × I × cosθ</div>
+            <p className="text-gray-400 max-w-md mx-auto">
+              The fundamental equation guiding our investment-grade energy audits and system designs.
             </p>
-            <div className="bg-[#0A192F] text-white p-6 rounded-xl text-center shadow-inner">
-              <span className="block text-xl md:text-2xl font-mono font-light tracking-wide py-2">
-                P = √3 × V × I × cosθ
-              </span>
-            </div>
-            <p className="text-sm font-light text-[#475569] leading-relaxed">
-              Where <strong className="font-semibold text-[#0A192F]">P</strong> represents active real electrical power system output in watts, <strong className="font-semibold text-[#0A192F]">V</strong> reflects root-mean-square system operating line-to-line electrical voltage matrices, <strong className="font-semibold text-[#0A192F]">I</strong> denotes measured continuous load alternating current levels, and <strong className="font-semibold text-[#0A192F]">cosθ</strong> defines evaluated reactive power factor efficiencies.
-            </p>
           </div>
         </div>
       </section>
-
-      {/* Executive Leadership Directory */}
-      <section className="bg-[#F3F7FA] py-24 border-t border-slate-200">
-        <div className="max-w-7xl mx-auto px-6 w-full">
-          <div className="mb-16 border-l-4 border-[#2563EB] pl-6 space-y-2">
-            <span className="text-xs font-mono tracking-widest text-[#475569] uppercase block">Executive Governance</span>
-            <h2 className="text-4xl font-extrabold text-[#0A192F] tracking-tight">Technical Leadership Roster</h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Leader 1 */}
-            <div className="p-8 bg-white rounded-2xl border border-slate-200 flex flex-col justify-between group hover:border-[#2563EB] transition duration-300 shadow-sm">
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <div className="w-12 h-12 bg-[#0A192F] text-white rounded-xl flex items-center justify-center transition group-hover:bg-[#2563EB] duration-300">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"></path>
-                    </svg>
-                  </div>
-                  <span className="text-[10px] font-mono bg-[#F3F7FA] border border-slate-300 px-2 py-0.5 rounded text-[#475569]">LEAD AUDITOR</span>
-                </div>
-                <div>
-                  <h3 className="font-extrabold text-xl text-[#0A192F] tracking-tight">Walter Kiplangat Korir</h3>
-                  <p className="text-xs text-[#2563EB] font-mono font-bold uppercase mt-1">Managing Director / Lead Engineer</p>
-                </div>
-                <p className="text-sm text-[#475569] font-light leading-relaxed">
-                  Over 12 years of professional experience in energy management, electrical systems engineering, and infrastructure projects across East Africa. Holds a BSc in Electrical Engineering from the University of Nairobi. Licensed as an EPRA Class A Auditor and T3 Solar Specialist.
-                </p>
-              </div>
-              <div className="flex gap-2 pt-6 border-t border-slate-200 mt-6 text-[10px] font-mono font-bold text-[#475569]">
-                <span className="bg-[#F3F7FA] px-2 py-1 rounded border">EPRA CLASS A</span>
-                <span className="bg-[#F3F7FA] px-2 py-1 rounded border">AEE CERTIFIED CEM</span>
-              </div>
-            </div>
-
-            {/* Leader 2 */}
-            <div className="p-8 bg-white rounded-2xl border border-slate-200 flex flex-col justify-between group hover:border-[#10B981] transition duration-300 shadow-sm">
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <div className="w-12 h-12 bg-[#0A192F] text-white rounded-xl flex items-center justify-center transition group-hover:bg-[#10B981] duration-300">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"></path>
-                    </svg>
-                  </div>
-                  <span className="text-[10px] font-mono bg-[#F3F7FA] border border-slate-300 px-2 py-0.5 rounded text-[#475569]">OPERATIONS RUNTIME</span>
-                </div>
-                <div>
-                  <h3 className="font-extrabold text-xl text-[#0A192F] tracking-tight">Brian Chebor Kiprop</h3>
-                  <p className="text-xs text-[#10B981] font-mono font-bold uppercase mt-1">Technical Director / Operations Manager</p>
-                </div>
-                <p className="text-sm text-[#475569] font-light leading-relaxed">
-                  An energy consultant with over 13 years of specialized experience across industrial power plants, mechanical processing lines, and international water systems in Israel and Norway. Spearheaded the prominent multi-stakeholder ADELE project in Ethiopia.
-                </p>
-              </div>
-              <div className="flex gap-2 pt-6 border-t border-slate-200 mt-6 text-[10px] font-mono font-bold text-[#475569]">
-                <span className="bg-[#F3F7FA] px-2 py-1 rounded border">AEE CMVP</span>
-                <span className="bg-[#F3F7FA] px-2 py-1 rounded border">KERB REGISTERED</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
     </div>
   );
 }
