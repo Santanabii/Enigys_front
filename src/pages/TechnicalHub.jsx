@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
+// Leader Images
 import walterImage from '../assets/leaders/walter.png';
 import brianImage from '../assets/leaders/brian.png';
 
@@ -7,17 +9,9 @@ export default function TechnicalHub() {
   return (
     <div className="bg-[#F3F7FA] text-[#0A192F] antialiased min-h-screen font-sans">
       
-
+      {/* Hero Section - No Background Image */}
       <header className="relative bg-[#0A192F] text-white pt-52 pb-40 overflow-hidden min-h-[85vh] flex items-center">
-    
-        <div 
-          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-          style={{ 
-            backgroundImage: "url('/images/industrial-hub-bg.jpg')",
-            opacity: 0.45 
-          }}
-        ></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-[#0A192F]/90 to-[#0A192F] z-0"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-[#0A192F]/95 to-[#0A192F]"></div>
 
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
           <div className="inline-flex items-center gap-2 px-5 py-2 text-xs font-mono tracking-widest uppercase bg-white/10 border border-white/20 rounded-full mb-6">
@@ -32,13 +26,15 @@ export default function TechnicalHub() {
             Trusted technical partner delivering energy efficiency, renewable solutions, and world-class engineering across East Africa.
           </p>
 
-          {/* Single Strong CTA */}
-          <Link 
-             to="/contact" 
-                     className="inline-flex items-center gap-3 px-12 py-5 bg-[#10B981] hover:bg-[#34D399] text-white font-semibold rounded-2xl text-lg transition-all"
->
-  Get In Touch With Our Team →
-</Link>
+          {/* Main CTA */}
+          <div className="mt-12">
+            <Link 
+              to="/contact" 
+              className="inline-flex items-center gap-3 px-12 py-5 bg-[#10B981] hover:bg-[#34D399] text-white font-semibold rounded-2xl text-lg transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              Get In Touch With Our Team →
+            </Link>
+          </div>
         </div>
       </header>
 
@@ -79,7 +75,7 @@ export default function TechnicalHub() {
         </div>
       </section>
 
-      {/* Leaders */}
+      {/* Leadership Section */}
       <section className="bg-white py-24 border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
@@ -88,10 +84,15 @@ export default function TechnicalHub() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-  
+            
+            {/* Walter */}
             <div className="group">
               <div className="aspect-[4/3] rounded-3xl overflow-hidden mb-8 relative shadow-xl">
-                <img src={walterImage} alt="Walter Kiplangat Korir" className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105" />
+                <img 
+                  src={walterImage} 
+                  alt="Walter Kiplangat Korir" 
+                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105" 
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all"></div>
                 <div className="absolute bottom-6 left-6 text-white opacity-0 group-hover:opacity-100 transition-all">
                   <p className="font-mono text-xs tracking-widest">LEAD ENGINEER</p>
@@ -108,10 +109,14 @@ export default function TechnicalHub() {
               </div>
             </div>
 
-          
+            {/* Brian */}
             <div className="group">
               <div className="aspect-[4/3] rounded-3xl overflow-hidden mb-8 relative shadow-xl">
-                <img src={brianImage} alt="Brian Chebor Kiprop" className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105" />
+                <img 
+                  src={brianImage} 
+                  alt="Brian Chebor Kiprop" 
+                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105" 
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all"></div>
                 <div className="absolute bottom-6 left-6 text-white opacity-0 group-hover:opacity-100 transition-all">
                   <p className="font-mono text-xs tracking-widest">TECHNICAL DIRECTOR</p>
@@ -131,7 +136,7 @@ export default function TechnicalHub() {
         </div>
       </section>
 
-      {/* Why Choose Us - Green Icons */}
+      {/* Why Choose Us */}
       <section className="bg-[#F3F7FA] py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
