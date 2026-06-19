@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 // Leader Images
 import walterImage from '../assets/leaders/walter.png';
 import brianImage from '../assets/leaders/brian.png';
-import bgImage from '../assets/leaders/industrial-hub-bg.jpg'; 
+import bgImage from '../assets/industrial-hub-bg.jpg'; 
 
 export default function TechnicalHub() {
   const [isVisible, setIsVisible] = useState({});
