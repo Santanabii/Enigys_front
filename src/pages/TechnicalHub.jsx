@@ -1,37 +1,35 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
 
 // Leader Images
 import walterImage from '../assets/leaders/walter.png';
 import brianImage from '../assets/leaders/brian.png';
 
-export default function TechnicalHub() {
-  const navigate = useNavigate();
+export default function TechnicalHub({ navigate }) {
   const [isVisible, setIsVisible] = useState({});
 
-  // Navigation handlers
+  // Navigation handlers using the navigate prop from App.jsx
   const handleGetStarted = () => {
-    navigate('/Contact');
+    navigate('contact');
   };
 
   const handleLearnMore = () => {
-    navigate('/TrackRecord');
+    navigate('track-record');
   };
 
   const handleContactUs = () => {
-    navigate('/Contact');
+    navigate('contact');
   };
 
   const handleViewProjects = () => {
-    navigate('/TrackRecord');
+    navigate('track-record');
   };
 
   const handleConnectWalter = () => {
-    navigate('/Contact');
+    navigate('contact');
   };
 
   const handleConnectBrian = () => {
-    navigate('/Contact');
+    navigate('contact');
   };
 
   useEffect(() => {
@@ -78,7 +76,7 @@ export default function TechnicalHub() {
               Delivering world-class energy solutions across East Africa with technical excellence and integrity.
             </p>
             
-            {/* CTA Buttons - Fixed with onClick handlers */}
+            {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4">
               <button 
                 onClick={handleGetStarted}
@@ -162,7 +160,7 @@ export default function TechnicalHub() {
               </p>
               <button 
                 onClick={handleLearnMore}
-                className="mt-6 text-[#10B981] opacity-0 group-hover:opacity-100 transition-all hover:translate-x-2 inline-block"
+                className="mt-6 text-[#10B981] opacity-0 group-hover:opacity-100 transition-all hover:translate-x-2 inline-block cursor-pointer"
               >
                 → Read More
               </button>
@@ -179,7 +177,7 @@ export default function TechnicalHub() {
               </p>
               <button 
                 onClick={handleViewProjects}
-                className="mt-6 text-[#2563EB] opacity-0 group-hover:opacity-100 transition-all hover:translate-x-2 inline-block"
+                className="mt-6 text-[#2563EB] opacity-0 group-hover:opacity-100 transition-all hover:translate-x-2 inline-block cursor-pointer"
               >
                 → View Services
               </button>
@@ -231,7 +229,7 @@ export default function TechnicalHub() {
                 </div>
                 <button 
                   onClick={handleConnectWalter}
-                  className="mt-6 text-[#10B981] font-medium hover:text-[#059669] transition-all group-hover:translate-x-2 inline-block"
+                  className="mt-6 text-[#10B981] font-medium hover:text-[#059669] transition-all group-hover:translate-x-2 inline-block cursor-pointer"
                 >
                   Connect with Walter →
                 </button>
@@ -266,7 +264,7 @@ export default function TechnicalHub() {
                 </div>
                 <button 
                   onClick={handleConnectBrian}
-                  className="mt-6 text-[#10B981] font-medium hover:text-[#059669] transition-all group-hover:translate-x-2 inline-block"
+                  className="mt-6 text-[#10B981] font-medium hover:text-[#059669] transition-all group-hover:translate-x-2 inline-block cursor-pointer"
                 >
                   Connect with Brian →
                 </button>
@@ -434,7 +432,7 @@ export default function TechnicalHub() {
         </div>
       </section>
 
-      {/* CTA Section - Fixed with proper navigation */}
+      {/* CTA Section */}
       <section className="bg-[#0A192F] py-24 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#10B981] rounded-full blur-3xl"></div>
@@ -465,22 +463,6 @@ export default function TechnicalHub() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-[#0A192F] border-t border-white/10 py-12">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-400 text-sm">
-              © 2026 Enigys. All rights reserved.
-            </p>
-            <div className="flex gap-6 text-gray-400 text-sm">
-              <a href="#" className="hover:text-[#10B981] transition-colors">Privacy</a>
-              <a href="#" className="hover:text-[#10B981] transition-colors">Terms</a>
-              <a href="#" className="hover:text-[#10B981] transition-colors">Contact</a>
-            </div>
-          </div>
-        </div>
-      </footer>
 
     </div>
   );
