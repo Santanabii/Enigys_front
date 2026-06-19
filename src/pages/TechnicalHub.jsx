@@ -1,8 +1,8 @@
 import React from 'react';
 
-// Import leader images (adjust path if your folder structure differs)
-import walterImage from '../assets/leaders/walter.png';
-import brianImage from '../assets/leaders/brian.png';
+// Import leader images (adjust path based on your folder structure)
+import walterImage from '../assets/leaders/walter.jpg';
+import brianImage from '../assets/leaders/brian.jpg';
 
 export default function TechnicalHub() {
   return (
@@ -16,7 +16,7 @@ export default function TechnicalHub() {
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 text-xs font-mono tracking-widest uppercase bg-white/10 border border-white/20 rounded-full mb-6">
-            EST. 2017 • KENYA
+            EST. 2017 • NAIROBI
           </div>
           <h1 className="text-6xl md:text-7xl font-black tracking-tighter leading-[1.05] max-w-4xl">
             Engineering with <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#10B981] to-[#2563EB]">Absolute Precision</span>
@@ -64,89 +64,7 @@ export default function TechnicalHub() {
         </div>
       </section>
 
-      {/* WHY CHOOSE US - New Engaging Section */}
-      <section className="bg-white py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <span className="uppercase font-mono tracking-widest text-sm text-[#10B981]">OUR EDGE</span>
-            <h2 className="text-5xl font-bold tracking-tighter mt-3">Why Industry Leaders Choose Enigys</h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                icon: "🏆",
-                title: "Licensed Expertise",
-                desc: "EPRA Class A Auditors & T3 Solar Specialists with proven regulatory compliance track record."
-              },
-              {
-                icon: "⚡",
-                title: "End-to-End EPC",
-                desc: "Full Procurement, Engineering & Construction capability — from design to commissioning."
-              },
-              {
-                icon: "📊",
-                title: "Investment-Grade Audits",
-                desc: "Data-driven energy audits that deliver measurable ROI and operational efficiency."
-              },
-              {
-                icon: "🌍",
-                title: "East Africa Focus",
-                desc: "Deep regional knowledge with successful projects across Kenya, Ethiopia, Uganda & beyond."
-              }
-            ].map((item, i) => (
-              <div key={i} className="group bg-[#F3F7FA] p-8 rounded-3xl hover:bg-white hover:shadow-xl border border-transparent hover:border-[#10B981] transition-all duration-300">
-                <div className="text-5xl mb-6 transition-transform group-hover:scale-110">{item.icon}</div>
-                <h3 className="text-2xl font-bold mb-3">{item.title}</h3>
-                <p className="text-[#475569] leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* TRUSTED PARTNERS - New Section */}
-      <section className="py-24 bg-[#F3F7FA]">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <span className="uppercase font-mono tracking-widest text-sm text-[#2563EB]">TRUSTED BY</span>
-            <h2 className="text-5xl font-bold tracking-tighter mt-3">Our Valued Partners</h2>
-            <p className="mt-4 text-[#475569] max-w-md mx-auto">Proud to power some of East Africa's leading organizations</p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 opacity-75 hover:opacity-100 transition-all">
-            {[
-              "Safaricom PLC",
-              "East African Breweries",
-              "Kenya Power",
-              "Bidco Africa",
-              "Equity Bank",
-              "Tata Chemicals",
-              "Kilimanjaro Premium Limited",
-              "Brookside Dairy"
-            ].map((partner, i) => (
-              <div key={i} className="bg-white h-28 flex items-center justify-center rounded-2xl border border-slate-200 hover:border-[#10B981] hover:-translate-y-1 transition-all text-center font-semibold text-lg shadow-sm">
-                {partner}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Power Formula Section */}
-      <section className="bg-[#0A192F] text-white py-24">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold tracking-tight mb-8">Engineering with Precision</h2>
-          <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-12 rounded-3xl">
-            <div className="text-4xl md:text-5xl font-mono font-light tracking-widest mb-8">P = √3 × V × I × cosθ</div>
-            <p className="text-gray-400 max-w-md mx-auto">
-              The equation that guides our investment-grade audits and system optimization strategies.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Leadership - Human-Centered (with images) */}
+      {/* Leadership Section */}
       <section className="bg-white py-24 border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
@@ -196,13 +114,81 @@ export default function TechnicalHub() {
               <h3 className="text-3xl font-bold">Brian Chebor Kiprop</h3>
               <p className="text-[#10B981] font-medium mt-1">Technical Director</p>
               <p className="mt-6 text-[#475569] leading-relaxed">
-                13+ years across industrial power and international energy projects.
+                13+ years across industrial power, mechanical systems, and international energy projects.
               </p>
               <div className="flex gap-3 mt-8">
                 <span className="px-4 py-2 text-xs font-mono bg-[#F3F7FA] rounded-full">AEE CMVP</span>
                 <span className="px-4 py-2 text-xs font-mono bg-[#F3F7FA] rounded-full">KERB REGISTERED</span>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us - Now after Leadership */}
+      <section className="bg-[#F3F7FA] py-24">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="uppercase font-mono tracking-widest text-sm text-[#10B981]">OUR EDGE</span>
+            <h2 className="text-5xl font-bold tracking-tighter mt-3">Why Choose Enigys</h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                icon: "🏆",
+                title: "Licensed Expertise",
+                desc: "EPRA Class A Auditors and T3 Solar Specialists with full regulatory compliance."
+              },
+              {
+                icon: "🔧",
+                title: "End-to-End EPC",
+                desc: "Complete Procurement, Engineering, and Construction services under one roof."
+              },
+              {
+                icon: "📈",
+                title: "Proven Results",
+                desc: "Measurable energy savings and reliable infrastructure delivered on time."
+              },
+              {
+                icon: "🌍",
+                title: "Regional Knowledge",
+                desc: "Deep understanding of East African markets, regulations, and operational realities."
+              }
+            ].map((item, i) => (
+              <div key={i} className="group bg-white p-8 rounded-3xl hover:shadow-xl border border-slate-100 hover:border-[#10B981] transition-all duration-300">
+                <div className="text-5xl mb-6 transition-transform group-hover:scale-110">{item.icon}</div>
+                <h3 className="text-2xl font-bold mb-3">{item.title}</h3>
+                <p className="text-[#475569] leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Trusted Partners - Realistic Selection */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="uppercase font-mono tracking-widest text-sm text-[#2563EB]">TRUSTED BY INDUSTRY LEADERS</span>
+            <h2 className="text-5xl font-bold tracking-tighter mt-3">Our Valued Partners</h2>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {[
+              "Kenya Power",
+              "Safaricom PLC",
+              "East African Breweries",
+              "Bidco Africa",
+              "Equity Bank",
+              "Kilimanjaro Premium Ltd",
+              "Brookside Dairy",
+              "Ministry of Energy"
+            ].map((partner, i) => (
+              <div key={i} className="bg-[#F3F7FA] h-28 flex items-center justify-center rounded-2xl border border-slate-200 hover:border-[#10B981] hover:-translate-y-1 transition-all text-center font-semibold text-lg shadow-sm">
+                {partner}
+              </div>
+            ))}
           </div>
         </div>
       </section>
