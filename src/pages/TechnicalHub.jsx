@@ -1,14 +1,38 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 // Leader Images
 import walterImage from '../assets/leaders/walter.png';
 import brianImage from '../assets/leaders/brian.png';
 
-
-import { Link } from 'react-router-dom';
-
 export default function TechnicalHub() {
+  const navigate = useNavigate();
   const [isVisible, setIsVisible] = useState({});
+
+  // Navigation handlers
+  const handleGetStarted = () => {
+    navigate('/Contact');
+  };
+
+  const handleLearnMore = () => {
+    navigate('/TrackRecord');
+  };
+
+  const handleContactUs = () => {
+    navigate('/Contact');
+  };
+
+  const handleViewProjects = () => {
+    navigate('/TrackRecord');
+  };
+
+  const handleConnectWalter = () => {
+    navigate('/Contact');
+  };
+
+  const handleConnectBrian = () => {
+    navigate('/Contact');
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -21,48 +45,86 @@ export default function TechnicalHub() {
       },
       { threshold: 0.1 }
     );
-  }, []);
-
-import { useNavigate } from 'react-router-dom';
-
-export default function TechnicalHub() {
-  const navigate = useNavigate();
-
-  const handleContactClick = () => {
-    navigate('/Contact');
-  };
-
-  const handleProjectsClick = () => {
-    navigate('/TrackRecord');
-  };
 
     const elements = document.querySelectorAll('.animate-on-scroll');
     elements.forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();
-
+  }, []);
 
   return (
     <div className="bg-[#F3F7FA] text-[#0A192F] antialiased min-h-screen font-sans">
       
       {/* Hero Header - Enhanced */}
-    <header className="relative bg-[#0A192F] text-white pt-52 pb-36 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-[#0A192F]/90 to-[#0A192F]"></div>
+      <header className="relative bg-[#0A192F] text-white min-h-screen flex items-center pt-20 pb-20 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A192F]/80 via-[#0A192F]/70 to-[#0A192F]/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0A192F]/60 to-transparent"></div>
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 text-xs font-mono tracking-widest uppercase bg-white/10 border border-white/20 rounded-full mb-6">
-            EST. 2017 • NAIROBI, KENYA
+        <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
+          <div className="max-w-4xl">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 text-xs font-mono tracking-widest uppercase bg-[#10B981]/20 border border-[#10B981]/30 rounded-full mb-8 animate-pulse">
+              <span className="w-2 h-2 bg-[#10B981] rounded-full"></span>
+              EST. 2017 • NAIROBI, KENYA
+            </div>
+            
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[1.05] mb-6">
+              Engineering with{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#10B981] to-[#2563EB]">
+                Absolute Precision
+              </span>
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-gray-300 max-w-2xl leading-relaxed mb-10">
+              Delivering world-class energy solutions across East Africa with technical excellence and integrity.
+            </p>
+            
+            {/* CTA Buttons - Fixed with onClick handlers */}
+            <div className="flex flex-wrap gap-4">
+              <button 
+                onClick={handleGetStarted}
+                className="px-8 py-4 bg-[#10B981] hover:bg-[#059669] text-white font-semibold rounded-full transition-all transform hover:scale-105 shadow-lg hover:shadow-[#10B981]/30"
+              >
+                Get Started
+              </button>
+              <button 
+                onClick={handleLearnMore}
+                className="px-8 py-4 border-2 border-white/30 hover:border-white text-white font-semibold rounded-full transition-all hover:bg-white/10 backdrop-blur-sm"
+              >
+                Learn More →
+              </button>
+            </div>
+
+            {/* Stats */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 pt-8 border-t border-white/10">
+              <div>
+                <div className="text-3xl font-bold text-[#10B981]">12+</div>
+                <div className="text-sm text-gray-400">Years Experience</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-[#10B981]">300+</div>
+                <div className="text-sm text-gray-400">Audits Completed</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-[#10B981]">50+</div>
+                <div className="text-sm text-gray-400">Projects Delivered</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-[#10B981]">100%</div>
+                <div className="text-sm text-gray-400">Client Satisfaction</div>
+              </div>
+            </div>
           </div>
-          <h1 className="text-6xl md:text-7xl font-black tracking-tighter leading-[1.05] max-w-4xl">
-            Engineering with <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#10B981] to-[#2563EB]">Absolute Precision</span>
-          </h1>
-          <p className="mt-6 text-xl text-gray-300 max-w-2xl">
-            Delivering world-class energy solutions across East Africa with technical excellence and integrity.
-          </p>
+        </div>
+        
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
+          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-[#10B981] rounded-full mt-2 animate-pulse"></div>
+          </div>
         </div>
       </header>
 
-      {/* Mandate Section - Enhanced */}
+      {/* Mandate Section */}
       <section className="max-w-7xl mx-auto px-6 py-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           <div className="lg:col-span-5 space-y-8">
@@ -72,6 +134,11 @@ export default function TechnicalHub() {
             </div>
             <div className="bg-white p-10 rounded-3xl border border-slate-100 shadow-xl hover:shadow-2xl transition-all transform hover:-translate-y-1">
               <div className="flex items-center gap-4 mb-4">
+                <div className="w-16 h-16 bg-[#10B981]/10 rounded-2xl flex items-center justify-center">
+                  <svg className="w-8 h-8 text-[#10B981]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
                 <div>
                   <p className="text-6xl font-black text-[#2563EB]">2017</p>
                   <p className="text-sm uppercase tracking-widest text-[#475569]">Incorporation Year</p>
@@ -93,7 +160,12 @@ export default function TechnicalHub() {
               <p className="mt-6 text-[#475569] leading-relaxed">
                 To deliver sustainable, high-performance energy solutions that power East Africa's industrial and commercial growth.
               </p>
-              <div className="mt-6 text-[#10B981] opacity-0 group-hover:opacity-100 transition-all"></div>
+              <button 
+                onClick={handleLearnMore}
+                className="mt-6 text-[#10B981] opacity-0 group-hover:opacity-100 transition-all hover:translate-x-2 inline-block"
+              >
+                → Read More
+              </button>
             </div>
 
             <div className="bg-white p-10 rounded-3xl border border-slate-100 hover:border-[#2563EB] transition-all group hover:shadow-xl transform hover:-translate-y-1">
@@ -105,13 +177,18 @@ export default function TechnicalHub() {
               <p className="mt-6 text-[#475569] leading-relaxed">
                 EPC • Investment-Grade Energy Audits • Solar Systems • Power Distribution • Regulatory Compliance.
               </p>
-              <div className="mt-6 text-[#2563EB] opacity-0 group-hover:opacity-100 transition-all"></div>
+              <button 
+                onClick={handleViewProjects}
+                className="mt-6 text-[#2563EB] opacity-0 group-hover:opacity-100 transition-all hover:translate-x-2 inline-block"
+              >
+                → View Services
+              </button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Leadership Section - Enhanced */}
+      {/* Leadership Section */}
       <section className="bg-white py-24 border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
@@ -152,7 +229,12 @@ export default function TechnicalHub() {
                   <span className="px-4 py-2 text-xs font-mono bg-white border border-slate-200 rounded-full">EPRA CLASS A</span>
                   <span className="px-4 py-2 text-xs font-mono bg-white border border-slate-200 rounded-full">AEE CEM</span>
                 </div>
-                
+                <button 
+                  onClick={handleConnectWalter}
+                  className="mt-6 text-[#10B981] font-medium hover:text-[#059669] transition-all group-hover:translate-x-2 inline-block"
+                >
+                  Connect with Walter →
+                </button>
               </div>
             </div>
 
@@ -182,14 +264,19 @@ export default function TechnicalHub() {
                   <span className="px-4 py-2 text-xs font-mono bg-white border border-slate-200 rounded-full">AEE CMVP</span>
                   <span className="px-4 py-2 text-xs font-mono bg-white border border-slate-200 rounded-full">CEM®</span>
                 </div>
-                
+                <button 
+                  onClick={handleConnectBrian}
+                  className="mt-6 text-[#10B981] font-medium hover:text-[#059669] transition-all group-hover:translate-x-2 inline-block"
+                >
+                  Connect with Brian →
+                </button>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us - Enhanced */}
+      {/* Why Choose Us */}
       <section className="bg-[#F3F7FA] py-24 relative overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
@@ -278,7 +365,7 @@ export default function TechnicalHub() {
             <span className="uppercase font-mono tracking-widest text-sm text-[#10B981] bg-[#10B981]/10 px-4 py-2 rounded-full inline-block">
               DELIVERED RESULTS
             </span>
-            <h2 className="text-5xl font-bold tracking-tighter mt-3">Project Experience & Impact</h2>
+            <h2 className="text-5xl font-bold tracking-tighter mt-3">Project Experience &amp; Impact</h2>
           </div>
 
           <div className="grid md:grid-cols-2 gap-10">
@@ -289,12 +376,12 @@ export default function TechnicalHub() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold">Energy Audits & Efficiency</h3>
+                <h3 className="text-2xl font-bold">Energy Audits &amp; Efficiency</h3>
               </div>
               <ul className="space-y-4 text-[#475569]">
                 <li className="flex gap-3 items-start">
                   <span className="text-[#10B981] font-bold mt-1">✓</span>
-                  <span>300+ Investment Grade & General Energy Audits completed</span>
+                  <span>300+ Investment Grade &amp; General Energy Audits completed</span>
                 </li>
                 <li className="flex gap-3 items-start">
                   <span className="text-[#10B981] font-bold mt-1">✓</span>
@@ -302,11 +389,11 @@ export default function TechnicalHub() {
                 </li>
                 <li className="flex gap-3 items-start">
                   <span className="text-[#10B981] font-bold mt-1">✓</span>
-                  <span>Industrial clients in plastics, steel, tea, flowers & food processing</span>
+                  <span>Industrial clients in plastics, steel, tea, flowers &amp; food processing</span>
                 </li>
                 <li className="flex gap-3 items-start">
                   <span className="text-[#10B981] font-bold mt-1">✓</span>
-                  <span>Hospitals, hotels, government facilities & business parks</span>
+                  <span>Hospitals, hotels, government facilities &amp; business parks</span>
                 </li>
               </ul>
             </div>
@@ -323,15 +410,15 @@ export default function TechnicalHub() {
               <ul className="space-y-4 text-[#475569]">
                 <li className="flex gap-3 items-start">
                   <span className="text-[#10B981] font-bold mt-1">✓</span>
-                  <span>Electrical Safety Audits & Independent Commissioning</span>
+                  <span>Electrical Safety Audits &amp; Independent Commissioning</span>
                 </li>
                 <li className="flex gap-3 items-start">
                   <span className="text-[#10B981] font-bold mt-1">✓</span>
-                  <span>Building Management & Automation Systems</span>
+                  <span>Building Management &amp; Automation Systems</span>
                 </li>
                 <li className="flex gap-3 items-start">
                   <span className="text-[#10B981] font-bold mt-1">✓</span>
-                  <span>Solar PV & Renewable Energy Installations</span>
+                  <span>Solar PV &amp; Renewable Energy Installations</span>
                 </li>
                 <li className="flex gap-3 items-start">
                   <span className="text-[#10B981] font-bold mt-1">✓</span>
@@ -339,7 +426,7 @@ export default function TechnicalHub() {
                 </li>
                 <li className="flex gap-3 items-start">
                   <span className="text-[#10B981] font-bold mt-1">✓</span>
-                  <span>Power Factor Correction & Generator Systems</span>
+                  <span>Power Factor Correction &amp; Generator Systems</span>
                 </li>
               </ul>
             </div>
@@ -347,7 +434,7 @@ export default function TechnicalHub() {
         </div>
       </section>
 
-      {/* New CTA Section */}
+      {/* CTA Section - Fixed with proper navigation */}
       <section className="bg-[#0A192F] py-24 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#10B981] rounded-full blur-3xl"></div>
@@ -362,17 +449,19 @@ export default function TechnicalHub() {
           <p className="text-gray-300 text-lg mb-10 max-w-2xl mx-auto">
             Contact our team of experts today for a consultation on your energy needs.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">#
-            <Link to="/Contact">
-              <button className="px-8 py-4 bg-[#10B981] hover:bg-[#059669] text-white font-semibold rounded-full transition-all transform hover:scale-105 shadow-lg hover:shadow-[#10B981]/30">
-                Contact Us
-              </button>
-            </Link>
-            <Link to="/TrackRecord">
-              <button className="px-8 py-4 border-2 border-white/30 hover:border-white text-white font-semibold rounded-full transition-all hover:bg-white/10">
-                View Our Projects
-              </button>
-            </Link>
+          <div className="flex flex-wrap justify-center gap-4">
+            <button 
+              onClick={handleContactUs}
+              className="px-8 py-4 bg-[#10B981] hover:bg-[#059669] text-white font-semibold rounded-full transition-all transform hover:scale-105 shadow-lg hover:shadow-[#10B981]/30"
+            >
+              Contact Us
+            </button>
+            <button 
+              onClick={handleViewProjects}
+              className="px-8 py-4 border-2 border-white/30 hover:border-white text-white font-semibold rounded-full transition-all hover:bg-white/10"
+            >
+              View Our Projects
+            </button>
           </div>
         </div>
       </section>

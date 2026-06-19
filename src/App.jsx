@@ -11,13 +11,24 @@ export default function App() {
     window.scrollTo(0, 0);
   }, [currentPage]);
 
+  // Navigation function to be passed to components
+  const navigateTo = (page) => {
+    setCurrentPage(page);
+    window.scrollTo(0, 0);
+  };
+
   const renderPage = () => {
     switch (currentPage) {
-      case 'home': return <Home navigate={setCurrentPage} />;
-      case 'technical': return <TechnicalHub />;
-      case 'track-record': return <TrackRecord />;
-      case 'contact': return <Contact />;
-      default: return <Home navigate={setCurrentPage} />;
+      case 'home': 
+        return <Home navigate={navigateTo} />;
+      case 'technical': 
+        return <TechnicalHub navigate={navigateTo} />;
+      case 'track-record': 
+        return <TrackRecord navigate={navigateTo} />;
+      case 'contact': 
+        return <Contact navigate={navigateTo} />;
+      default: 
+        return <Home navigate={navigateTo} />;
     }
   };
 
@@ -26,7 +37,10 @@ export default function App() {
       {/* Structural Header Navigation */}
       <nav className="absolute top-0 left-0 w-full z-50 bg-enigys-navy border-b border-white/5">
         <div className="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
-          <button onClick={() => setCurrentPage('home')} className="flex items-center focus:outline-none cursor-pointer">
+          <button 
+            onClick={() => navigateTo('home')} 
+            className="flex items-center focus:outline-none cursor-pointer"
+          >
             <span className="text-lg font-extrabold tracking-widest text-white">
               ENIGYS<span className="text-enigys-emerald">.</span>
             </span>
@@ -34,33 +48,49 @@ export default function App() {
           
           <div className="hidden md:flex items-center space-x-10 text-sm font-semibold tracking-wide text-white/90">
             <button 
-              onClick={() => setCurrentPage('home')} 
-              className={`pb-1 transition-all cursor-pointer ${currentPage === 'home' ? 'text-enigys-emerald border-b-2 border-enigys-emerald' : 'hover:text-white opacity-80 hover:opacity-100'}`}
+              onClick={() => navigateTo('home')} 
+              className={`pb-1 transition-all cursor-pointer ${
+                currentPage === 'home' 
+                  ? 'text-enigys-emerald border-b-2 border-enigys-emerald' 
+                  : 'hover:text-white opacity-80 hover:opacity-100'
+              }`}
             >
               Home
             </button>
             <button 
-              onClick={() => setCurrentPage('technical')} 
-              className={`pb-1 transition-all cursor-pointer ${currentPage === 'technical' ? 'text-enigys-emerald border-b-2 border-enigys-emerald' : 'hover:text-white opacity-80 hover:opacity-100'}`}
+              onClick={() => navigateTo('technical')} 
+              className={`pb-1 transition-all cursor-pointer ${
+                currentPage === 'technical' 
+                  ? 'text-enigys-emerald border-b-2 border-enigys-emerald' 
+                  : 'hover:text-white opacity-80 hover:opacity-100'
+              }`}
             >
               Technical Hub
             </button>
             <button 
-              onClick={() => setCurrentPage('track-record')} 
-              className={`pb-1 transition-all cursor-pointer ${currentPage === 'track-record' ? 'text-enigys-emerald border-b-2 border-enigys-emerald' : 'hover:text-white opacity-80 hover:opacity-100'}`}
+              onClick={() => navigateTo('track-record')} 
+              className={`pb-1 transition-all cursor-pointer ${
+                currentPage === 'track-record' 
+                  ? 'text-enigys-emerald border-b-2 border-enigys-emerald' 
+                  : 'hover:text-white opacity-80 hover:opacity-100'
+              }`}
             >
               Track Record
             </button>
             <button 
-              onClick={() => setCurrentPage('contact')} 
-              className={`pb-1 transition-all cursor-pointer ${currentPage === 'contact' ? 'text-enigys-emerald border-b-2 border-enigys-emerald' : 'hover:text-white opacity-80 hover:opacity-100'}`}
+              onClick={() => navigateTo('contact')} 
+              className={`pb-1 transition-all cursor-pointer ${
+                currentPage === 'contact' 
+                  ? 'text-enigys-emerald border-b-2 border-enigys-emerald' 
+                  : 'hover:text-white opacity-80 hover:opacity-100'
+              }`}
             >
               Contact & RFQ
             </button>
           </div>
 
           <button 
-            onClick={() => setCurrentPage('contact')} 
+            onClick={() => navigateTo('contact')} 
             className="inline-flex items-center justify-center px-6 py-3 text-xs font-bold uppercase tracking-widest text-white border border-white/20 rounded-full hover:bg-white hover:text-enigys-navy transition duration-300 backdrop-blur-sm cursor-pointer"
           >
             Get In Touch
