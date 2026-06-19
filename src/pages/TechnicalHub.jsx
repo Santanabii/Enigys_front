@@ -1,22 +1,24 @@
 import React from 'react';
 
-// Import leader images (adjust path based on your folder structure)
-import walterImage from '../assets/leaders/walter.jpg';
-import brianImage from '../assets/leaders/brian.jpg';
+// Leader Images
+import walterImage from '../assets/leaders/walter.png';
+import brianImage from '../assets/leaders/brian.png';
 
 export default function TechnicalHub() {
   return (
     <div className="bg-[#F3F7FA] text-[#0A192F] antialiased min-h-screen font-sans">
       
-      {/* Enhanced Hero */}
+      {/* Hero Header */}
       <header className="relative bg-[#0A192F] text-white pt-52 pb-36 overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-30 mix-blend-luminosity bg-cover bg-center" 
-             style={{ backgroundImage: "url('/images/industrial-hub-bg.jpg')" }}></div>
+        <div 
+          className="absolute inset-0 z-0 opacity-30 mix-blend-luminosity bg-cover bg-center" 
+          style={{ backgroundImage: "url('/images/industrial-hub-bg.jpg')" }}
+        ></div>
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-[#0A192F]/90 to-[#0A192F]"></div>
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 text-xs font-mono tracking-widest uppercase bg-white/10 border border-white/20 rounded-full mb-6">
-            EST. 2017 • NAIROBI
+            EST. 2017 • NAIROBI, KENYA
           </div>
           <h1 className="text-6xl md:text-7xl font-black tracking-tighter leading-[1.05] max-w-4xl">
             Engineering with <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#10B981] to-[#2563EB]">Absolute Precision</span>
@@ -74,13 +76,13 @@ export default function TechnicalHub() {
 
           <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
             
-            {/* Walter */}
+            {/* Walter Kiplangat Korir */}
             <div className="group">
               <div className="aspect-[4/3] rounded-3xl overflow-hidden mb-8 relative shadow-xl">
                 <img 
                   src={walterImage} 
-                  alt="Walter Kiplangat Korir"
-                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
+                  alt="Walter Kiplangat Korir" 
+                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105" 
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all"></div>
                 <div className="absolute bottom-6 left-6 text-white opacity-0 group-hover:opacity-100 transition-all">
@@ -90,7 +92,8 @@ export default function TechnicalHub() {
               <h3 className="text-3xl font-bold">Walter Kiplangat Korir</h3>
               <p className="text-[#2563EB] font-medium mt-1">Managing Director &amp; Lead Engineer</p>
               <p className="mt-6 text-[#475569] leading-relaxed">
-                12+ years in energy systems engineering. EPRA Class A Auditor and T3 Solar Specialist.
+                BSc Electrical &amp; Electronic Engineering, CEM®, EPRA Class A Energy Auditor. 
+                Over 12 years delivering energy audits and renewable energy projects.
               </p>
               <div className="flex gap-3 mt-8">
                 <span className="px-4 py-2 text-xs font-mono bg-[#F3F7FA] rounded-full">EPRA CLASS A</span>
@@ -98,13 +101,13 @@ export default function TechnicalHub() {
               </div>
             </div>
 
-            {/* Brian */}
+            {/* Brian Chebor Kiprop */}
             <div className="group">
               <div className="aspect-[4/3] rounded-3xl overflow-hidden mb-8 relative shadow-xl">
                 <img 
                   src={brianImage} 
-                  alt="Brian Chebor Kiprop"
-                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
+                  alt="Brian Chebor Kiprop" 
+                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105" 
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all"></div>
                 <div className="absolute bottom-6 left-6 text-white opacity-0 group-hover:opacity-100 transition-all">
@@ -112,20 +115,21 @@ export default function TechnicalHub() {
                 </div>
               </div>
               <h3 className="text-3xl font-bold">Brian Chebor Kiprop</h3>
-              <p className="text-[#10B981] font-medium mt-1">Technical Director</p>
+              <p className="text-[#10B981] font-medium mt-1">Technical Director / Operations Manager</p>
               <p className="mt-6 text-[#475569] leading-relaxed">
-                13+ years across industrial power, mechanical systems, and international energy projects.
+                BSc Mechanical &amp; Power Plant Engineering, CEM®. 
+                13+ years in industrial energy systems and renewable energy projects.
               </p>
               <div className="flex gap-3 mt-8">
                 <span className="px-4 py-2 text-xs font-mono bg-[#F3F7FA] rounded-full">AEE CMVP</span>
-                <span className="px-4 py-2 text-xs font-mono bg-[#F3F7FA] rounded-full">KERB REGISTERED</span>
+                <span className="px-4 py-2 text-xs font-mono bg-[#F3F7FA] rounded-full">CEM®</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us - Now after Leadership */}
+      {/* Why Choose Us */}
       <section className="bg-[#F3F7FA] py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
@@ -135,29 +139,46 @@ export default function TechnicalHub() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              {
-                icon: "🏆",
+              { 
+                icon: (
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 8.944 11.922.42.095.858.143 1.295.143a3 3 0 01.435-.008" />
+                  </svg>
+                ),
                 title: "Licensed Expertise",
-                desc: "EPRA Class A Auditors and T3 Solar Specialists with full regulatory compliance."
+                desc: "EPRA Class A Auditors, Certified Energy Managers (CEM), and T3 Solar Specialists."
               },
-              {
-                icon: "🔧",
+              { 
+                icon: (
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2" />
+                  </svg>
+                ),
                 title: "End-to-End EPC",
-                desc: "Complete Procurement, Engineering, and Construction services under one roof."
+                desc: "Full Procurement, Engineering, Construction, Commissioning and Maintenance."
               },
-              {
-                icon: "📈",
-                title: "Proven Results",
-                desc: "Measurable energy savings and reliable infrastructure delivered on time."
+              { 
+                icon: (
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 7h8m0 0v8m0-8l-9 9-4-4-6 6" />
+                  </svg>
+                ),
+                title: "Proven Track Record",
+                desc: "Successful delivery of 300+ energy audits and major projects across East Africa."
               },
-              {
-                icon: "🌍",
-                title: "Regional Knowledge",
-                desc: "Deep understanding of East African markets, regulations, and operational realities."
+              { 
+                icon: (
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314-11.314z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                ),
+                title: "Regional Expertise",
+                desc: "Deep understanding of East African regulations, markets, and operational challenges."
               }
             ].map((item, i) => (
               <div key={i} className="group bg-white p-8 rounded-3xl hover:shadow-xl border border-slate-100 hover:border-[#10B981] transition-all duration-300">
-                <div className="text-5xl mb-6 transition-transform group-hover:scale-110">{item.icon}</div>
+                <div className="text-[#10B981] mb-6 transition-transform group-hover:scale-110">{item.icon}</div>
                 <h3 className="text-2xl font-bold mb-3">{item.title}</h3>
                 <p className="text-[#475569] leading-relaxed">{item.desc}</p>
               </div>
@@ -166,29 +187,35 @@ export default function TechnicalHub() {
         </div>
       </section>
 
-      {/* Trusted Partners - Realistic Selection */}
-      <section className="py-24 bg-white">
+      {/* Project Experience & Impact - New Replacement Section */}
+      <section className="bg-white py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="uppercase font-mono tracking-widest text-sm text-[#2563EB]">TRUSTED BY INDUSTRY LEADERS</span>
-            <h2 className="text-5xl font-bold tracking-tighter mt-3">Our Valued Partners</h2>
+            <span className="uppercase font-mono tracking-widest text-sm text-[#10B981]">DELIVERED RESULTS</span>
+            <h2 className="text-5xl font-bold tracking-tighter mt-3">Project Experience & Impact</h2>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              "Kenya Power",
-              "Safaricom PLC",
-              "East African Breweries",
-              "Bidco Africa",
-              "Equity Bank",
-              "Kilimanjaro Premium Ltd",
-              "Brookside Dairy",
-              "Ministry of Energy"
-            ].map((partner, i) => (
-              <div key={i} className="bg-[#F3F7FA] h-28 flex items-center justify-center rounded-2xl border border-slate-200 hover:border-[#10B981] hover:-translate-y-1 transition-all text-center font-semibold text-lg shadow-sm">
-                {partner}
-              </div>
-            ))}
+          <div className="grid md:grid-cols-2 gap-10">
+            <div className="bg-[#F3F7FA] p-8 rounded-3xl">
+              <h3 className="text-2xl font-bold mb-6">Energy Audits & Efficiency</h3>
+              <ul className="space-y-4 text-[#475569]">
+                <li className="flex gap-3"><span className="text-[#10B981] font-bold">•</span> 300+ Investment Grade & General Energy Audits completed</li>
+                <li className="flex gap-3"><span className="text-[#10B981] font-bold">•</span> Major malls: TRM, Garden City, Two Rivers, The Hub, The Oval</li>
+                <li className="flex gap-3"><span className="text-[#10B981] font-bold">•</span> Industrial clients in plastics, steel, tea, flowers & food processing</li>
+                <li className="flex gap-3"><span className="text-[#10B981] font-bold">•</span> Hospitals, hotels, government facilities & business parks</li>
+              </ul>
+            </div>
+
+            <div className="bg-[#F3F7FA] p-8 rounded-3xl">
+              <h3 className="text-2xl font-bold mb-6">Key Projects Delivered</h3>
+              <ul className="space-y-4 text-[#475569]">
+                <li className="flex gap-3"><span className="text-[#10B981] font-bold">•</span> Electrical Safety Audits & Independent Commissioning</li>
+                <li className="flex gap-3"><span className="text-[#10B981] font-bold">•</span> Building Management & Automation Systems (JCI Metasys, Honeywell, Tridium)</li>
+                <li className="flex gap-3"><span className="text-[#10B981] font-bold">•</span> Solar PV & Renewable Energy Installations</li>
+                <li className="flex gap-3"><span className="text-[#10B981] font-bold">•</span> MV/LV Electrical Infrastructure Projects</li>
+                <li className="flex gap-3"><span className="text-[#10B981] font-bold">•</span> Power Factor Correction & Generator Systems</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
